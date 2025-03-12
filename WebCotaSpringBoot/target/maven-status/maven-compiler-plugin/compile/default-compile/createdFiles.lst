@@ -1,0 +1,3 @@
+org\example\webcotaspringboot\model\User.class
+org\example\webcotaspringboot\WebCotaSpringBootApplication.class
+org\example\webcotaspringboot\controller\UserController.class
