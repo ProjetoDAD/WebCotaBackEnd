@@ -1,3 +1,8 @@
-org\example\webcotaspringboot\model\User.class
-org\example\webcotaspringboot\WebCotaSpringBootApplication.class
+org\example\webcotaspringboot\model\FavoriteActions.class
+org\example\webcotaspringboot\view\UserRepository.class
+org\example\webcotaspringboot\model\ArtigosSeguidos.class
 org\example\webcotaspringboot\controller\UserController.class
+org\example\webcotaspringboot\view\service\UserService.class
+org\example\webcotaspringboot\model\User.class
+org\example\webcotaspringboot\model\StrategiesFollowed.class
+org\example\webcotaspringboot\WebCotaSpringBootApplication.class

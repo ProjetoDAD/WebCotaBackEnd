@@ -1,19 +1,28 @@
 package org.example.webcotaspringboot.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.List;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Document(collection = "perfil")
 public class User {
 
-    private int id;
-    private String nome;
-    private String email;
+    @Id
+    private String id;
     private String senha;
+    private String email;
+    private String nome_usuario;
+    private String metodo_investimento;
+    private List<FavoriteActions> acoes_favoritas;
+    private List<ArtigosSeguidos> artigos_seguidos;
+    private String celular;
+    private List<StrategiesFollowed> estrategias_seguidas;
 
 }
