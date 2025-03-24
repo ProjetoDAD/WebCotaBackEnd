@@ -17,7 +17,7 @@ Essa parte do projeto fala apenas sobre o back-end e nossa criação dos endpoin
 #### Clonar o repositório
 
 ```bash
-git clone https://github.com/ProjetoDAD/WebCota.git
+git clone https://github.com/ProjetoDAD/WebCotaBackEnd.git
 ```
 
 #### Instalação das dependências do projeto
