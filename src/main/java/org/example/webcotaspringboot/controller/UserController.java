@@ -20,10 +20,12 @@ public class UserController {
         return service.saveUser(user);
     }
 
-    @GetMapping(value = "/getUser")
-    List<User> getAllUsers(){
-        return service.getAllUsers();
+    @GetMapping(value = "/getUsers")
+    public ResponseEntity<List<User>> getAllUsers() {
+        List<User> users = service.getAllUsers();
+        if (users.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(users);
     }
-
-
 }
