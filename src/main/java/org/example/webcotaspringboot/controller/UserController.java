@@ -33,14 +33,21 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody Login login) {
-        Optional<User> user = service.getLogin(login);
-
-        if (user.isPresent() && user.get().getSenha().equals(login.getSenha())) {
-            return ResponseEntity.ok(user);
-        } else {
-            return ResponseEntity.status(401).body("E-mail ou senha inválidos.");
-        }
+    public ResponseEntity<Object> login(@RequestBody Login login) {
+        return service.login(login);
     }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<Object> deletar(@RequestHeader String id) {
+        ResponseEntity<Object> response = service.deleteUser(id);
+
+        if (response.getStatusCode().is2xxSuccessful()) {
+            return ResponseEntity.ok("Usuário deletado com sucesso!");
+        } else {
+            return ResponseEntity.status(response.getStatusCode()).body("Erro ao deletar usuário: " + response.getBody());
+        }
+
+    }
+
 
 }
