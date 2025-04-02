@@ -1,5 +1,6 @@
 package org.example.webcotaspringboot.view.service;
 
+import org.example.webcotaspringboot.model.Login;
 import org.example.webcotaspringboot.model.User;
 import org.example.webcotaspringboot.view.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,8 @@ public class UserService {
     public List<User> getAllUsers(){
         return userRepository.findAll();
     }
-    public Optional<User> getLogin(String email) {
-        return userRepository.findByEmail(email);
+    public Optional<User> getLogin(Login login) {
+        return userRepository.findByEmail(login.getEmail());
     }
 
 }

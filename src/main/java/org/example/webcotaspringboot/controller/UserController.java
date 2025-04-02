@@ -1,5 +1,6 @@
 package org.example.webcotaspringboot.controller;
 
+import org.example.webcotaspringboot.model.Login;
 import org.example.webcotaspringboot.model.User;
 import org.example.webcotaspringboot.view.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +33,10 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestHeader String email, @RequestHeader String senha) {
-        Optional<User> user = service.getLogin(email);
+    public ResponseEntity<?> login(@RequestBody Login login) {
+        Optional<User> user = service.getLogin(login);
 
-        if (user.isPresent() && user.get().getSenha().equals(senha)) {
+        if (user.isPresent() && user.get().getSenha().equals(login.getSenha())) {
             return ResponseEntity.ok(user);
         } else {
             return ResponseEntity.status(401).body("E-mail ou senha inválidos.");
