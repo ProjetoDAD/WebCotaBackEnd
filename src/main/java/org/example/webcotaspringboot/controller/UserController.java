@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/users")
@@ -29,4 +30,16 @@ public class UserController {
         }
         return ResponseEntity.ok(users);
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestHeader String email, @RequestHeader String senha) {
+        Optional<User> user = service.getLogin(email);
+
+        if (user.isPresent() && user.get().getSenha().equals(senha)) {
+            return ResponseEntity.ok(user);
+        } else {
+            return ResponseEntity.status(401).body("E-mail ou senha inválidos.");
+        }
+    }
+
 }
