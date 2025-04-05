@@ -18,7 +18,7 @@ public class User {
     private List<String> artigos_seguidos;
     private String celular;
     private List<String> estrategias_seguidas;
-    private boolean verificacao_2fatores;
+    private Boolean verificacao_2fatores;
 
     public String getId() {
         return id;

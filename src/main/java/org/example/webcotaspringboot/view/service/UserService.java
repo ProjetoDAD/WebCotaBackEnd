@@ -65,4 +65,46 @@ public class UserService {
         }
     }
 
+    public ResponseEntity<Object> updateUserPartial(User updatedUser, String id) {
+        Optional<User> userOptional = userRepository.findById(id);
+
+        if (userOptional.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuário não encontrado.");
+        }
+
+        User existingUser = userOptional.get();
+
+        if (updatedUser.getSenha() != null) {
+            existingUser.setSenha(updatedUser.getSenha());
+        }
+        if (updatedUser.getEmail() != null) {
+            existingUser.setEmail(updatedUser.getEmail());
+        }
+        if (updatedUser.getNomeUsuario() != null) {
+            existingUser.setNomeUsuario(updatedUser.getNomeUsuario());
+        }
+        if (updatedUser.getMetodo_investimento() != null) {
+            existingUser.setMetodo_investimento(updatedUser.getMetodo_investimento());
+        }
+        if (updatedUser.getCelular() != null) {
+            existingUser.setCelular(updatedUser.getCelular());
+        }
+        if (updatedUser.getAcoes_favoritas() != null) {
+            existingUser.setAcoes_favoritas(updatedUser.getAcoes_favoritas());
+        }
+        if (updatedUser.getArtigos_seguidos() != null) {
+            existingUser.setArtigos_seguidos(updatedUser.getArtigos_seguidos());
+        }
+        if (updatedUser.getEstrategias_seguidas() != null) {
+            existingUser.setEstrategias_seguidas(updatedUser.getEstrategias_seguidas());
+        }
+
+        userRepository.save(existingUser);
+
+        return ResponseEntity.ok("Usuário atualizado parcialmente com sucesso.");
+    }
+
+
+
+
 }

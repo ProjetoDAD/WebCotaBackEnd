@@ -1,7 +1,10 @@
 package org.example.webcotaspringboot.controller;
 
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import org.example.webcotaspringboot.model.Login;
 import org.example.webcotaspringboot.model.User;
+import org.example.webcotaspringboot.model.UserDTO;
 import org.example.webcotaspringboot.view.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -48,6 +51,30 @@ public class UserController {
         }
 
     }
+
+    @PutMapping("/atualizar")
+    public ResponseEntity<Object> updateUser(@RequestHeader String id,
+                                             @RequestBody User user,
+                                             HttpServletResponse response) {
+        ResponseEntity<Object> objectResponseEntity = service.updateUserPartial(user, id);
+
+        if (objectResponseEntity.getStatusCode().is2xxSuccessful()) {
+            // Criar o cookie (exemplo com ID do usuário ou algum outro valor útil)
+            Cookie cookie = new Cookie("userAtualizado", "true");
+            cookie.setHttpOnly(true);
+            cookie.setPath("/");
+            cookie.setMaxAge(60 * 60);
+
+            // Adiciona o cookie na resposta
+            response.addCookie(cookie);
+
+            return ResponseEntity.ok(objectResponseEntity.getBody());
+        } else {
+            return ResponseEntity.status(objectResponseEntity.getStatusCode())
+                    .body("Erro ao atualizar usuário: " + objectResponseEntity.getBody());
+        }
+    }
+
 
 
 }
