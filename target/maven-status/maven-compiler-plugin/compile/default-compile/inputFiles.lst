@@ -1,5 +1,8 @@
-C:\Users\leonardofurlanis-ieg\OneDrive - Instituto Germinare\Área de Trabalho\Tech\DAD\webCotaProjetoBackEnd\WebCotaBackEnd\src\main\java\org\example\webcotaspringboot\controller\UserController.java
-C:\Users\leonardofurlanis-ieg\OneDrive - Instituto Germinare\Área de Trabalho\Tech\DAD\webCotaProjetoBackEnd\WebCotaBackEnd\src\main\java\org\example\webcotaspringboot\model\User.java
-C:\Users\leonardofurlanis-ieg\OneDrive - Instituto Germinare\Área de Trabalho\Tech\DAD\webCotaProjetoBackEnd\WebCotaBackEnd\src\main\java\org\example\webcotaspringboot\view\service\UserService.java
-C:\Users\leonardofurlanis-ieg\OneDrive - Instituto Germinare\Área de Trabalho\Tech\DAD\webCotaProjetoBackEnd\WebCotaBackEnd\src\main\java\org\example\webcotaspringboot\view\UserRepository.java
-C:\Users\leonardofurlanis-ieg\OneDrive - Instituto Germinare\Área de Trabalho\Tech\DAD\webCotaProjetoBackEnd\WebCotaBackEnd\src\main\java\org\example\webcotaspringboot\WebCotaSpringBootApplication.java
+C:\Users\User\Desktop\WebCotaBackEnd\src\main\java\org\example\webcotaspringboot\config\CorsConfig.java
+C:\Users\User\Desktop\WebCotaBackEnd\src\main\java\org\example\webcotaspringboot\controller\UserController.java
+C:\Users\User\Desktop\WebCotaBackEnd\src\main\java\org\example\webcotaspringboot\model\Login.java
+C:\Users\User\Desktop\WebCotaBackEnd\src\main\java\org\example\webcotaspringboot\model\User.java
+C:\Users\User\Desktop\WebCotaBackEnd\src\main\java\org\example\webcotaspringboot\model\UserDTO.java
+C:\Users\User\Desktop\WebCotaBackEnd\src\main\java\org\example\webcotaspringboot\view\service\UserService.java
+C:\Users\User\Desktop\WebCotaBackEnd\src\main\java\org\example\webcotaspringboot\view\UserRepository.java
+C:\Users\User\Desktop\WebCotaBackEnd\src\main\java\org\example\webcotaspringboot\WebCotaSpringBootApplication.java

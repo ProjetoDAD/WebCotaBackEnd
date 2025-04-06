@@ -59,13 +59,11 @@ public class UserController {
         ResponseEntity<Object> objectResponseEntity = service.updateUserPartial(user, id);
 
         if (objectResponseEntity.getStatusCode().is2xxSuccessful()) {
-            // Criar o cookie (exemplo com ID do usuário ou algum outro valor útil)
             Cookie cookie = new Cookie("userAtualizado", "true");
             cookie.setHttpOnly(true);
             cookie.setPath("/");
             cookie.setMaxAge(60 * 60);
 
-            // Adiciona o cookie na resposta
             response.addCookie(cookie);
 
             return ResponseEntity.ok(objectResponseEntity.getBody());
