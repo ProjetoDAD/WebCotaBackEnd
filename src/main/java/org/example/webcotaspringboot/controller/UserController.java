@@ -22,6 +22,7 @@ public class UserController {
 
     @PostMapping(value = "/addUser")
     public ResponseEntity<Object> createUser(@RequestBody User user) {
+        user.setVerificacao_2fatores(false);
         return service.saveUser(user);
     }
 
