@@ -5,10 +5,10 @@ import org.example.webcotaspringboot.model.User;
 import org.example.webcotaspringboot.view.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
@@ -104,7 +104,8 @@ public class UserService {
         return ResponseEntity.ok("Usuário atualizado parcialmente com sucesso.");
     }
 
-
-
+     public List<Optional<User>> getUserById(String id){
+         return Collections.singletonList(userRepository.findById(id));
+     }
 
 }

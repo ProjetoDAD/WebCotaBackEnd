@@ -4,7 +4,6 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import org.example.webcotaspringboot.model.Login;
 import org.example.webcotaspringboot.model.User;
-import org.example.webcotaspringboot.model.UserDTO;
 import org.example.webcotaspringboot.view.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -73,6 +72,13 @@ public class UserController {
         }
     }
 
-
+    @GetMapping
+    public ResponseEntity<List<Optional<User>>> getUserById(@RequestHeader String id) {
+        List<Optional<User>> userById = service.getUserById(id);
+        if (userById.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(userById);
+    }
 
 }

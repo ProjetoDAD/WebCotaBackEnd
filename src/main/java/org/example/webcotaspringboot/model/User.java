@@ -20,6 +20,15 @@ public class User {
     private List<String> estrategias_seguidas;
     private Boolean verificacao_2fatores;
 
+    private String tipo;
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
     public String getId() {
         return id;
     }
